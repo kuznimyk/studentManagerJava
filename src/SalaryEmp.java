@@ -14,4 +14,24 @@ public class SalaryEmp extends Employee{
         this.birthdate[2] = birthYear;
 
     }
+
+    public double calcTax(){
+        double paycheck = calcGrossPay() * 12;
+
+        if (paycheck < 14000)
+            return 0;
+        else if (paycheck < 50000)
+            return paycheck * 0.15;
+        else if (paycheck < 100000)
+            return paycheck * 0.21;
+        else if (paycheck < 150000)
+            return paycheck * 0.26;
+        else
+            return paycheck * 0.29;
+
+
+    }
+    public double calcGrossPay(){
+        return payRate /12;
+    }
 }

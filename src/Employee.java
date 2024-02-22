@@ -13,6 +13,11 @@ public class Employee extends Person{
         this.birthdate[0] = 1;
         this.birthdate[1] = 1;
         this.birthdate[2] = 2000;
+        this.hoursWorked = 0;
 
     }
+    public String toString(){
+        return "";
+    }
+
 }
