@@ -1,10 +1,10 @@
 public class Employee extends Person{
     protected int hoursWorked;
     protected double payRate;
-    protected float grossPay;
-    protected float tax;
-    protected float CPP;
-    protected float EI;
+    protected double grossPay;
+    protected double tax;
+    protected double CPP;
+    protected double EI;
 
     public Employee(){
         super();
@@ -17,7 +17,22 @@ public class Employee extends Person{
 
     }
     public String toString(){
-        return "";
+        return "Test";
     }
+
+    public double getGrossPay(){
+        return grossPay;
+    }
+    public double getTax(){
+        return tax;
+    }
+    public double getCPP(){
+        return CPP;
+    }
+    public double getEI(){
+        return EI;
+    }
+
+
 
 }
