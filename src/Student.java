@@ -1,21 +1,43 @@
-public class Student extends Person{
-    private String[] courseList;
-    private float GPA;
-    public Student(){
-        super();
-        this.name = "Test Name";
-        this.adress = "Test Adress";
-        this.birthdate[0] = 1;
-        this.birthdate[1] = 1;
-        this.birthdate[2] = 2000;
-    }
-    public Student(String name,String adress, int birthDay, int birthMonth, int birthYear){
-        super();
-        this.name = name;
-        this.adress = adress;
-        this.birthdate[0] = birthDay;
-        this.birthdate[1] = birthMonth;
-        this.birthdate[2] = birthYear;
+import java.util.ArrayList;
 
+public class Student extends Person {
+    private ArrayList<Course> courseList;
+    private double GPA;
+
+    public Student(String name, String address, int birthDay, int birthMonth, int birthYear) {
+        super(name, address, birthDay, birthMonth, birthYear);
+        this.courseList = new ArrayList<>();
+    }
+
+
+    public void addCourse(String newCourseIdentifier, double mark) {
+        if (courseList.size() < MAX_COURSES) {
+            Course newCourse = new Course(newCourseIdentifier, mark);
+            this.courseList.add(newCourse);
+        } else {
+            System.out.println("Maximum number of courses reached.");
+        }
+    }
+
+
+    public double calcGpa() {
+        double totalMarks = 0;
+        for (Course course : courseList) {
+            totalMarks += course.getGrade();
+        }
+        this.GPA = courseList.size() > 0 ? totalMarks / courseList.size() : 0;
+        return this.GPA;
+    }
+
+
+    public void printReport() {
+        System.out.println("===============================================");
+        System.out.println(super.getName() + " " + super.getAddress());
+        System.out.println("----------------------------------------------");
+        for (Course course : courseList) {
+            System.out.printf("   %s:        %.2f\n", course.getId(), course.getGrade());
+        }
+        System.out.printf("       GPA:        %.2f\n", this.calcGpa());
+        System.out.println("===============================================");
     }
 }
