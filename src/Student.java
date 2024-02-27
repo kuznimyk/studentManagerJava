@@ -14,7 +14,7 @@ public class Student extends Person {
 
 
     public void addCourse(String newCourseIdentifier, double mark) {
-        if (courseList.length < MAX_COURSES) {
+        if (coursetracker < MAX_COURSES) {
             Course newCourse = new Course(newCourseIdentifier, mark);
             this.courseList[coursetracker] = newCourse;
         } else {
@@ -26,8 +26,8 @@ public class Student extends Person {
 
     public double calcGpa() {
         double totalMarks = 0;
-        for (Course course : courseList) {
-            totalMarks += course.getGrade();
+        for (int i = 0; i < coursetracker; i++) {
+            totalMarks += courseList[i].getGrade();
         }
         this.GPA = coursetracker > 0 ? totalMarks / coursetracker : 0;
         return this.GPA;
@@ -38,8 +38,8 @@ public class Student extends Person {
         System.out.println("===============================================");
         System.out.println(name + " " + adress);
         System.out.println("----------------------------------------------");
-        for (Course course : courseList) {
-            System.out.printf("   %s:        %.2f\n", course.getId(), course.getGrade());
+        for (int i = 0; i < coursetracker; i++) {
+            System.out.printf("   %s:        %.2f\n", courseList[i].getId(), courseList[i].getGrade());
         }
         System.out.printf("       GPA:        %.2f\n", this.calcGpa());
         System.out.println("===============================================");

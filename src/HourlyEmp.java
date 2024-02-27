@@ -101,13 +101,13 @@ public class HourlyEmp extends Employee{
     }
 
 
-    public void printPayCheque(int hours) {
+    public void printPayCheque(double hours) {
         hoursWorked = hours;
-        System.out.println(calcGrossPay());
-        System.out.println(calcTax());
-        System.out.println(calcCpp());
-        System.out.println(calcEi());
-        System.out.println(calcNetPay());
+        System.out.println((float)calcGrossPay());
+        System.out.println((float)calcTax() );
+        System.out.println((float)calcCpp() );
+        System.out.println((float)calcEi() );
+        System.out.println((float)calcNetPay());
     }
 
 
