@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Student extends Person {
-    private ArrayList<Course> courseList;
+    private Course[] courseList;
     private double GPA;
 
     public Student(String name, String address, int birthDay, int birthMonth, int birthYear) {
-        super(name, address, birthDay, birthMonth, birthYear);
-        this.courseList = new ArrayList<>();
+
+
     }
 
 

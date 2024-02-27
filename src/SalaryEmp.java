@@ -42,8 +42,9 @@ public class SalaryEmp extends Employee{
 
 
     }
-    public void calcGrossPay(){
+    public double calcGrossPay(){
         this.grossPay = payRate /12;
+        return grossPay;
     }
 
     public double calcCpp(){
@@ -74,7 +75,16 @@ public class SalaryEmp extends Employee{
     }
 
 
-    public double getNetPay() {
+    public double calcNetPay() {
         return grossPay - tax - CPP - EI;
+    }
+
+    public void printPayCheque(){
+        System.out.println(calcGrossPay());
+        System.out.println(calcTax());
+        System.out.println(calcCpp());
+        System.out.println(calcEi());
+        System.out.println(calcNetPay());
+
     }
 }
