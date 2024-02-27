@@ -51,18 +51,23 @@ public class HourlyEmp extends Employee{
         }
     }
 
-    public void calcGrossPay(){
+    public double calcGrossPay(){
         if (hoursWorked > 0){
             if (hoursWorked > 140 && hoursWorked <= 147){
                 this.grossPay =  140 * payRate + payRate * (hoursWorked - 140) * 1.5;
+                return grossPay;
             }
             else if(hoursWorked > 147){
                 this.grossPay =  140 * payRate + payRate * 7 * 1.5 + (hoursWorked - 147)*2 * payRate;
+                return grossPay;
             }
-            else{this.grossPay = hoursWorked * payRate;}
+            else{this.grossPay = hoursWorked * payRate;
+                return grossPay;
+            }
         }
         else{
             this.grossPay = 0;
+            return grossPay;
         }
     }
 
@@ -91,8 +96,19 @@ public class HourlyEmp extends Employee{
         }
     }
 
-    public double getNetPay() {
+    public double calcNetPay() {
         return grossPay - tax - CPP - EI;
     }
+
+
+    public void printPayCheque(double hours) {
+        hoursWorked = hours;
+        System.out.println((float)calcGrossPay());
+        System.out.println((float)calcTax() );
+        System.out.println((float)calcCpp() );
+        System.out.println((float)calcEi() );
+        System.out.println((float)calcNetPay());
+    }
+
 
 }

@@ -1,5 +1,5 @@
 public class Employee extends Person{
-    protected int hoursWorked;
+    protected double hoursWorked;
     protected double payRate;
     protected double grossPay;
     protected double tax;
