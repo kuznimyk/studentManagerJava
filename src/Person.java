@@ -12,4 +12,12 @@ public abstract class Person {
         birthdate = new int[3];
 
     }
+    protected Person(String name, String adress, int birthDay, int birthMonth, int birthYear){
+        birthdate = new int[3];
+        this.name = name;
+        this.adress = adress;
+        birthdate[0] = birthDay;
+        birthdate[1] = birthMonth;
+        birthdate[2] = birthYear;
+    }
 }
