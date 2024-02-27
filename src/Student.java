@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Student extends Person {
-    private static int MAX_COURSES = 7;
+    private static int MAX_COURSES = 12;
     private int coursetracker;
     private Course[] courseList;
     private double GPA;
@@ -9,7 +9,7 @@ public class Student extends Person {
     public Student(String name, String address, int birthDay, int birthMonth, int birthYear) {
         super(name, address, birthDay, birthMonth, birthYear);
         coursetracker = 0;
-        courseList = new Course[7];
+        courseList = new Course[12];
     }
 
 
