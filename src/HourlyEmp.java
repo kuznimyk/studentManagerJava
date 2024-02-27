@@ -45,10 +45,13 @@ public class HourlyEmp extends Employee{
 
 
     }
-    public void setHoursWorked(int hours){
+    public void setHoursWorked(double hours){
         if (hours > 0) {
             this.hoursWorked = hours;
         }
+    }
+    public double getHoursWorked(){
+        return this.hoursWorked;
     }
 
     public double calcGrossPay(){
