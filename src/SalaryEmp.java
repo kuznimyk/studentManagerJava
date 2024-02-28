@@ -1,3 +1,7 @@
+/*
+File with regular employers data and calculations
+*/
+
 public class SalaryEmp extends Employee{
 
     public SalaryEmp(){
@@ -44,6 +48,9 @@ public class SalaryEmp extends Employee{
     }
     public double calcGrossPay(){
         this.grossPay = payRate /12;
+        calcEi();
+        calcCpp();
+        calcTax();
         return grossPay;
     }
 
@@ -79,12 +86,27 @@ public class SalaryEmp extends Employee{
         return grossPay - tax - CPP - EI;
     }
 
-    public void printPayCheque(){
-        System.out.println(calcGrossPay());
-        System.out.println(calcTax());
-        System.out.println(calcCpp());
-        System.out.println(calcEi());
-        System.out.println(calcNetPay());
-
+    public void printPayCheque() {
+        calcGrossPay();
+        double tax = calcTax();
+        double cpp = calcCpp();
+        double ei = calcEi();
+        double netPay = calcNetPay();
+        System.out.println(this.id);
+        System.out.println(name);
+        System.out.println(adress.replace("\n", "\r\n"));
+        System.out.println("--------------------------------------------");
+        System.out.println("   Hours worked: 189.00   Rate: " + String.format("%.2f", payRate));
+        System.out.println("--------------------------------------------");
+        System.out.println("   Gross Pay:     " + String.format("%.2f", grossPay));
+        System.out.println("   Tax:           " + String.format("%.2f", tax));
+        System.out.println("   CPP:            " + String.format("%.2f", cpp));
+        System.out.println("   EI:              " + String.format("%.2f", ei));
+        System.out.println();
+        System.out.println("   Net Pay:       " + String.format("%.2f", netPay));
+        System.out.println("===============================================");
     }
+
+
+
 }
