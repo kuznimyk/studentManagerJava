@@ -21,5 +21,16 @@ public class Main {
         z.addCourse("AUSCI 235", 4);
         z.addCourse("AUMAT 116", 3.3);
         z.printReport();
+
+
+        Student instance = new Student("Puff the Magic Dragon",
+                "4112 66 St\r\nCamrose, AB",
+                2, 3, 2000);
+        instance.addCourse("AUCSC 112", 4);
+        instance.addCourse("AUMAT 116", 3.3);
+        instance.addCourse("AUCSC 111", 3.7);
+        instance.addCourse("AUMAT 120", 3.0);
+
+        instance.printReport(); //Output captured in outContent
     }
 }

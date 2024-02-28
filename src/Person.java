@@ -13,6 +13,9 @@ public abstract class Person {
 
     }
     protected Person(String name, String adress, int birthDay, int birthMonth, int birthYear){
+        this.id = idTracker;
+        idTracker += 3;
+        birthdate = new int[3];
         birthdate = new int[3];
         this.name = name;
         this.adress = adress;

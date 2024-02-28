@@ -13,6 +13,11 @@ public class Student extends Person {
     }
 
 
+
+    public String toString(){
+        return "Test";
+    }
+
     public void addCourse(String newCourseIdentifier, double mark) {
         if (coursetracker < MAX_COURSES) {
             Course newCourse = new Course(newCourseIdentifier, mark);
@@ -36,12 +41,12 @@ public class Student extends Person {
 
     public void printReport() {
         System.out.println("===============================================");
-        System.out.println(name + " " + adress);
-        System.out.println("----------------------------------------------");
+        System.out.println(this.id + "\n" + name + "\r\n" + adress);
+        System.out.println("--------------------------------------------");
         for (int i = 0; i < coursetracker; i++) {
-            System.out.printf("   %s:        %.2f\n", courseList[i].getId(), courseList[i].getGrade());
+            System.out.printf("   %s:        %.2f\r\n", courseList[i].getId(), courseList[i].getGrade());
         }
-        System.out.printf("       GPA:        %.2f\n", this.calcGpa());
+        System.out.printf("\r\n         GPA:        %.2f\r\n", this.calcGpa());
         System.out.println("===============================================");
     }
 }
