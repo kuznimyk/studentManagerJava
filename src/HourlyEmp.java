@@ -4,11 +4,14 @@ File with hourly employers data and calculations
 public class HourlyEmp extends Employee{
 
 
+    //basic constructor that sets the payrate to default value
     public HourlyEmp(){
         super();
         this.payRate = 15.00;
 
     }
+
+    //constructor that sets up person's information
     public HourlyEmp(String name,String adress, double salary, int birthDay, int birthMonth,int birthYear){
         super();
         this.name = name;
@@ -20,6 +23,7 @@ public class HourlyEmp extends Employee{
     }
 
 
+    //calculats the taxes depending on the salary range
     public double calcTax(){
         double paycheck = grossPay * 12;
 
@@ -48,15 +52,19 @@ public class HourlyEmp extends Employee{
 
 
     }
+
+    //setter that sets the amount of hours worked
     public void setHoursWorked(double hours){
         if (hours > 0) {
             this.hoursWorked = hours;
         }
     }
+    //getter of hours worked
     public double getHoursWorked(){
         return this.hoursWorked;
     }
 
+    //calculates gross pay depending ont he amoutn of hours
     public double calcGrossPay(){
         if (hoursWorked > 0){
             if (hoursWorked > 140 && hoursWorked <= 147){
@@ -89,6 +97,8 @@ public class HourlyEmp extends Employee{
         }
     }
 
+
+    //method calculates pension plan
     public double calcCpp(){
         double pension = grossPay * 0.0545;
         if (pension > 266.67){
@@ -102,6 +112,7 @@ public class HourlyEmp extends Employee{
 
     }
 
+    //methond calculates employment insurance
     public double calcEi(){
         double ei = grossPay * 0.0158;
         if (ei <= 74.17){
@@ -114,16 +125,23 @@ public class HourlyEmp extends Employee{
         }
     }
 
+    //method that calculates net pay
     public double calcNetPay() {
         return grossPay - tax - CPP - EI;
     }
 
+    //method that prins out all the information: salary, taxes, pension plan and insurance
 
     public void printPayCheque(double hours) {
         hoursWorked = hours;
-        System.out.println("Jon Doe");
-        System.out.println("4112 66 St");
-        System.out.println("Camrose, AB");
+        calcGrossPay();
+        calcCpp();
+        calcTax();
+        calcEi();
+        System.out.println("===============================================");
+        System.out.println(this.id);
+        System.out.println(this.name);
+        System.out.println(this.adress);
         System.out.println("--------------------------------------------");
         System.out.printf("   Hours worked: %.2f   Rate: %.2f%n", hoursWorked, payRate);
         System.out.println("--------------------------------------------");

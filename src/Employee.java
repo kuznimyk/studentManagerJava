@@ -5,7 +5,7 @@ public class Employee extends Person{
     protected double tax;
     protected double CPP;
     protected double EI;
-
+    //basic contructor that sets up everything as test and date of birth on 1/1/2000
     public Employee(){
         super();
         this.name = "test name";
@@ -16,10 +16,12 @@ public class Employee extends Person{
         this.hoursWorked = 0;
 
     }
+    //toString class
     public String toString(){
         return "Test";
     }
 
+    //getters and setters that will be inherited by salaryemploee and hourlyemployee
     public double getGrossPay(){
         return grossPay;
     }

@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
 
                                                 Ý Æ Ã-Ø Œ ¿
 
@@ -32,6 +33,9 @@ import java.text.DecimalFormat;
 public class Main {
     public static void main(String[] args) {
 
+        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+        // to see how IntelliJ IDEA suggests fixing it.
+//        create each class and test them
         SalaryEmp x = new SalaryEmp("Meagain Minkle", "23 Japer Ave\r\nRed "
                 + "Deer, AB", 13999.99, 4, 8, 1981);
         x.printPayCheque();
