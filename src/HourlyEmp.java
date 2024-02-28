@@ -1,3 +1,6 @@
+/*
+File with hourly employers data and calculations
+*/
 public class HourlyEmp extends Employee{
 
 
@@ -58,18 +61,30 @@ public class HourlyEmp extends Employee{
         if (hoursWorked > 0){
             if (hoursWorked > 140 && hoursWorked <= 147){
                 this.grossPay =  140 * payRate + payRate * (hoursWorked - 140) * 1.5;
+                calcEi();
+                calcCpp();
+                calcTax();
                 return grossPay;
             }
             else if(hoursWorked > 147){
                 this.grossPay =  140 * payRate + payRate * 7 * 1.5 + (hoursWorked - 147)*2 * payRate;
+                calcEi();
+                calcCpp();
+                calcTax();
                 return grossPay;
             }
             else{this.grossPay = hoursWorked * payRate;
+                calcEi();
+                calcCpp();
+                calcTax();
                 return grossPay;
             }
         }
         else{
             this.grossPay = 0;
+            calcEi();
+            calcCpp();
+            calcTax();
             return grossPay;
         }
     }
@@ -106,12 +121,20 @@ public class HourlyEmp extends Employee{
 
     public void printPayCheque(double hours) {
         hoursWorked = hours;
-        System.out.println((float)calcGrossPay());
-        System.out.println((float)calcTax() );
-        System.out.println((float)calcCpp() );
-        System.out.println((float)calcEi() );
-        System.out.println((float)calcNetPay());
+        System.out.println("Jon Doe");
+        System.out.println("4112 66 St");
+        System.out.println("Camrose, AB");
+        System.out.println("--------------------------------------------");
+        System.out.printf("   Hours worked: %.2f   Rate: %.2f%n", hoursWorked, payRate);
+        System.out.println("--------------------------------------------");
+        System.out.printf("   Gross Pay:     %.2f%n", grossPay);
+        System.out.printf("   Tax:            %.2f%n", tax);
+        System.out.printf("   CPP:            %.2f%n", CPP);
+        System.out.printf("   EI:              %.2f%n%n", EI);
+        System.out.printf("   Net Pay:       %.2f%n", calcNetPay());
+        System.out.println("===============================================");
     }
 
 
 }
+
