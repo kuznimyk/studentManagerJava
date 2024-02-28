@@ -1,4 +1,31 @@
+/*
 
+                                                Ý Æ Ã-Ø Œ ¿
+
+Code description:
+    Software for Augustana Associated (HRAA) to manage their students’ and employees’ information., including payroll,
+    with the prospect of adding their student management system at a later date.
+
+Authors:
+    * Mykyta Kuznietsov
+    * Vadim Rudenko
+
+Class:
+    * AUCSC 112 LAB 1H04
+
+ID numbers:
+    * 1796900
+    * 1793290
+
+Date:
+    * 27 Feb, 2024
+
+Task spreading:
+    * Parts 1-9: Mykyta
+    * Parts 10-14: Vadim
+    * Bug fixing, refactoring and etc: Both
+
+*/
 import java.text.DecimalFormat;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -6,6 +33,7 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
+//        create each class and test them
         SalaryEmp x = new SalaryEmp("Meagain Minkle", "23 Japer Ave\r\nRed "
                 + "Deer, AB", 13999.99, 4, 8, 1981);
         x.printPayCheque();
